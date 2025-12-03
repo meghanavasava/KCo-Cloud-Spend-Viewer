@@ -88,7 +88,7 @@ function Dashboard() {
         <select value={team} onChange={(e) => setTeam(e.target.value)}>
           <option value="All">All Team</option>
           <option value="Core">Core</option>
-          <option value="WEB">WEB</option>
+          <option value="Web">WEB</option>
           <option value="Data">Data</option>
         </select>
 
@@ -107,7 +107,7 @@ function Dashboard() {
         <CloudCard name="GCP Spend" spend={gcpTotal} />
       </div>
 
-      {/* Table + Graph (70% / 30%) */}
+      {/* Table + Graph */}
       <div className="dashboard-content">
         <div className="table-left">
           <table className="table-container">
@@ -137,7 +137,7 @@ function Dashboard() {
           </table>
         </div>
 
-        {/* Right: Graph */}
+        {/* Graph */}
         <div className="graph-right">
            <ChartCard awsTotal={awsTotal} gcpTotal={gcpTotal} />
         </div>

@@ -43,6 +43,7 @@ body {
 }
 
 
+
 /* Filters */
 .filters {
   display: flex;
@@ -61,6 +62,7 @@ body {
 /* Summary cards */
 .summary-cards {
   display: flex;
+  background-color: rgba(255,255,255,0.5);
   gap: 20px;             /* space between cards */
   justify-content: space-between; /* spread them evenly */
   flex-wrap: wrap;        /* wrap on smaller screens */
@@ -74,6 +76,7 @@ body {
   color: #000000;
   font-weight: bold;
   text-align: center;
+
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -97,11 +100,10 @@ body {
 }
 
 .graph-right {
-  flex: 1;                /* takes 1/3rd space */
+               /* takes 1/3rd space */
   min-width: 590px;
   max-height: 1000px; 
   height: 400px;
-  
   background: #fff;
   border-radius: 10px;
   padding: 10px;
@@ -142,7 +144,7 @@ body {
   height: 45px;
   text-align: center;
   vertical-align: middle;
-  background-color: rgba(75,192,192,0.3);
+  background-color: rgb(162, 216, 216);
   z-index: 5;
   border-bottom: 2px solid #ccc;
    font-weight: bold;
