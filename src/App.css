@@ -1,159 +1,149 @@
-/* Make whole page full width & center content */
 html, body, #root {
-  width: 100%;
-  height: 100%;
-  max-width: 2000px;
-  max-height: 100%;
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;   /* centers horizontally */
-  background-color: white; /* light bg instead of black */
+  width: 100%;
+  height: 100%;
+  background: #ffffff;  
+  font-family: Arial, sans-serif;
 }
 
-/* Optional – remove unwanted dark padding from top-left of screen */
-body {
-  display: flex;
-  align-items: flex-start;
-  max-width: 100%;
-}
 
-/* Container for dashboard */
 .dashboard-container {
-   max-width: 1600px; /* controls overall width */
-  margin: 0 auto;    /* centers the container horizontally */
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  color: #000000;
-  background-color: white; /* light background */
-  border-radius: 10px;
-}
-.dashboard-container {
-  width: 100%;             /* take 90% of screen */
-  max-width: 1600px;      /* but don’t exceed this */
-  margin: 0 auto;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  background-color: #ffffff;
- 
+  background: #f7f9fb;
+  padding: 20px 40px;   
 }
 
 
+.header-container {
+  padding: 25px 0;
+  background: #222;
+  color: white;
+  text-align: center;
+}
 
-/* Filters */
+.header-container h1 {
+  font-size: 32px;
+  margin: 0;
+  font-weight: 600;
+}
+
 .filters {
+  margin-top: 10px;
   display: flex;
-  gap: 15px;
-  margin-bottom: 20px;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .filters select {
   padding: 8px 12px;
+  margin-top: 20px;
+  border: 1px solid #aaa;
   border-radius: 6px;
-  border: 1px solid #ccc;
+  background: #222;
   color: white;
   font-size: 14px;
 }
 
-/* Summary cards */
 .summary-cards {
   display: flex;
-  background-color: rgba(255,255,255,0.5);
-  gap: 20px;             /* space between cards */
-  justify-content: space-between; /* spread them evenly */
-  flex-wrap: wrap;        /* wrap on smaller screens */
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+  gap: 20px;
+  padding: 0 10px;
 }
-
 
 .summary-cards > div {
-  flex: 1;
-  padding: 20px;
-  border-radius: 12px;
-  color: #000000;
-  font-weight: bold;
+  flex: 1;                         
+  background: white;
+  border-radius: 14px;
+  padding: 18px 10px;              
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
   text-align: center;
+  height: 110px;                   
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: 0.25s ease;
+}
 
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+.summary-cards > div:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.summary-cards h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.summary-cards p {
+  margin-top: 8px;
+  font-size: 22px;               
+  font-weight: bold;
+  color: #333;
 }
 
 
-/* Dashboard content */
 .dashboard-content {
-  display: flex;
-  min-width: 1400px;
-  min-width: 900px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
   gap: 20px;
+  width: 100%;
 }
 
 .table-left {
-  flex: 2;                /* takes 2/3rd space */
-  max-height: 480px;      /* table scroll height */
-  overflow-y: auto;
-  border-radius: 10px;
-  min-width: 900px;
-  table-layout: fixed;
-  width: 100%;
-}
-
-.graph-right {
-               /* takes 1/3rd space */
-  min-width: 590px;
-  max-height: 1000px; 
-  height: 400px;
-  background: #fff;
-  border-radius: 10px;
+  background: white;
+  border-radius: 12px;
+  margin-top: 20px;
+  padding-left: 6px; 
   padding: 10px;
-  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  color: black;
+  height: 360px;      
+  overflow-y: auto;    
+
+  margin-right: 5px;
 }
 
-/* Hide ugly default scrollbar */
-.table-left::-webkit-scrollbar {
-  width: 8px;
-}
-.table-left::-webkit-scrollbar-thumb {
-  background-color: rgba(0,0,0,0.2);
-  border-radius: 4px;
-}
-.table-left::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-/* Table styling */
 .table-container {
   width: 100%;
   border-collapse: collapse;
-  border-radius: 10px;
 }
+
 
 .table-container th,
 .table-container td {
   padding: 10px;
   text-align: left;
-  
-  
 }
 
 .table-container th {
+  background: rgb(162, 216, 216);
   position: sticky;
+
   top: 0;
-  padding: 12px;
-  height: 45px;
-  text-align: center;
-  vertical-align: middle;
-  background-color: rgb(162, 216, 216);
   z-index: 5;
-  border-bottom: 2px solid #ccc;
-   font-weight: bold;
-  border-bottom: 2px solid rgba(0,0,0,0.1);
-
-
-  
+  font-weight: bold;
 }
 
-.table-container tr:nth-child(even) {
-  background-color: #f0f4f7;
+/* responsive */
+@media (max-width: 1100px) {
+  .dashboard-content {
+    grid-template-columns: 1fr;
+  }
 }
+
+.graph-right {
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin-top: 20px;
+  height: 360px;     /* SAME height as table */
+  overflow: hidden;
+}
+

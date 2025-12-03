@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "../App.css";
 import CloudCard from "./CloudCard";
 import ChartCard from "./ChartCard";
+import Header from "./Header";
 
 
 function Dashboard() {
@@ -77,7 +78,10 @@ function Dashboard() {
 
   return (
     <div className="dashboard-container">
-      {/* Filters */}
+  
+      <div className="header-container">
+        <Header />
+      </div>
       <div className="filters">
         <select value={cloud} onChange={(e) => setCloud(e.target.value)}>
           <option value="All">All Cloud</option>
@@ -100,14 +104,14 @@ function Dashboard() {
         </select>
       </div>
 
-      {/* Summary Cards */}
+    
       <div className="summary-cards">
         <CloudCard name="Total Spend" spend={totalSpend} />
         <CloudCard name="AWS Spend" spend={awsTotal} />
         <CloudCard name="GCP Spend" spend={gcpTotal} />
       </div>
 
-      {/* Table + Graph */}
+
       <div className="dashboard-content">
         <div className="table-left">
           <table className="table-container">
@@ -137,7 +141,7 @@ function Dashboard() {
           </table>
         </div>
 
-        {/* Graph */}
+     
         <div className="graph-right">
            <ChartCard awsTotal={awsTotal} gcpTotal={gcpTotal} />
         </div>
