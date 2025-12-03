@@ -1,42 +1,157 @@
-#root {
-  max-width: 1280px;
+/* Make whole page full width & center content */
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  max-width: 2000px;
+  max-height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;   /* centers horizontally */
+  background-color: white; /* light bg instead of black */
+}
+
+/* Optional – remove unwanted dark padding from top-left of screen */
+body {
+  display: flex;
+  align-items: flex-start;
+  max-width: 100%;
+}
+
+/* Container for dashboard */
+.dashboard-container {
+   max-width: 1600px; /* controls overall width */
+  margin: 0 auto;    /* centers the container horizontally */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: #000000;
+  background-color: white; /* light background */
+  border-radius: 10px;
+}
+.dashboard-container {
+  width: 100%;             /* take 90% of screen */
+  max-width: 1600px;      /* but don’t exceed this */
   margin: 0 auto;
-  padding: 2rem;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #ffffff;
+ 
+}
+
+
+/* Filters */
+.filters {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.filters select {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  color: white;
+  font-size: 14px;
+}
+
+/* Summary cards */
+.summary-cards {
+  display: flex;
+  gap: 20px;             /* space between cards */
+  justify-content: space-between; /* spread them evenly */
+  flex-wrap: wrap;        /* wrap on smaller screens */
+}
+
+
+.summary-cards > div {
+  flex: 1;
+  padding: 20px;
+  border-radius: 12px;
+  color: #000000;
+  font-weight: bold;
   text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+
+/* Dashboard content */
+.dashboard-content {
+  display: flex;
+  min-width: 1400px;
+  min-width: 900px;
+  gap: 20px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.table-left {
+  flex: 2;                /* takes 2/3rd space */
+  max-height: 480px;      /* table scroll height */
+  overflow-y: auto;
+  border-radius: 10px;
+  min-width: 900px;
+  table-layout: fixed;
+  width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.graph-right {
+  flex: 1;                /* takes 1/3rd space */
+  min-width: 590px;
+  max-height: 1000px; 
+  height: 400px;
+  
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
 }
 
-.card {
-  padding: 2em;
+/* Hide ugly default scrollbar */
+.table-left::-webkit-scrollbar {
+  width: 8px;
+}
+.table-left::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 4px;
+}
+.table-left::-webkit-scrollbar-track {
+  background: transparent;
 }
 
-.read-the-docs {
-  color: #888;
+/* Table styling */
+.table-container {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+}
+
+.table-container th,
+.table-container td {
+  padding: 10px;
+  text-align: left;
+  
+  
+}
+
+.table-container th {
+  position: sticky;
+  top: 0;
+  padding: 12px;
+  height: 45px;
+  text-align: center;
+  vertical-align: middle;
+  background-color: rgba(75,192,192,0.3);
+  z-index: 5;
+  border-bottom: 2px solid #ccc;
+   font-weight: bold;
+  border-bottom: 2px solid rgba(0,0,0,0.1);
+
+
+  
+}
+
+.table-container tr:nth-child(even) {
+  background-color: #f0f4f7;
 }
