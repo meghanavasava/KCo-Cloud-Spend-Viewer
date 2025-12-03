@@ -1,6 +1,6 @@
 # K&Co. Cloud Spend Viewer
 
-A simple cloud spend analytics dashboard built for the K&Co. Full-Stack Engineer Intern take-home assignment.
+A simple cloud spend analytics dashboard built for the K&Co.
 
 
 
@@ -98,7 +98,8 @@ Data is loaded from a static JSON file (mock API), following Option 2 of the ass
       
   ## Screenshots
 
-  <img width="1900" height="881" alt="Screenshot 2025-12-03 135558" src="https://github.com/user-attachments/assets/b8c8ab62-32dd-4f6c-b9d9-87432d93e5c6" />
+  <img width="1877" height="885" alt="image" src="https://github.com/user-attachments/assets/00ee35f1-9a0f-4101-a518-696be3bdc6c8" />
+
 
   ## Status
       App fully functional and satisfies all primary assignment requirements.
@@ -107,13 +108,11 @@ Data is loaded from a static JSON file (mock API), following Option 2 of the ass
       If I had more time, I would improve: 
       - Implement the Bonus 2 detail modal for row-level insights
       - Add sorting for cost and date columns
-      - Add monthly spend trend line chart
       - Build a small backend (Node/Express) to serve filters via API
-      - Make the UI fully mobile-responsive with a collapsible sidebar
-      - Deploy the app to Netlify/Vercel
+      - Deploy the app to Vercel
 
   ## Created by **Meghana Vasava**  
-    Email: **your-email@example.com**  
+    Email: **meghanavasava8@gmail.com**  
     GitHub: https://github.com/meghanavasava
 
 
