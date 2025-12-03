@@ -24,15 +24,14 @@ Data is loaded from a static JSON file (mock API), following Option 2 of the ass
     
      - React (Vite)
      - Chart.js
-     - Modern CSS (Flexbox, gradients, responsive layout)
+     - Modern CSS (responsive layout)
        
     Backend
      - Not used (using mock API — static JSON instead)
   
     Data
      - public/data.json
-     - Sample structure includes:
-     - date, cloud_provider, service, team, env, cost_usd 
+     - Sample structure includes: date, cloud_provider, service, team, env, cost_usd 
      
 ## Project Structure
 
@@ -72,7 +71,7 @@ Data is loaded from a static JSON file (mock API), following Option 2 of the ass
       - Total spend
       - AWS total
       - GCP total
-      - Gradient summary cards
+      - summary cards
 
     4. Clean UX
       - Light theme
